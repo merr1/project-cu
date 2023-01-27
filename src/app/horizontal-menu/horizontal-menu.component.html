@@ -1,0 +1,92 @@
+<div class="header navbar-light bg-light">
+  <div class="image">
+    <div>
+      <img
+        class="mr-4"
+        [routerLink]="['/context']"
+        src="../../assets/img/logo.png"
+      />
+      <img
+        class="mr-5"
+        class="logo"
+        src="../../assets/img/Final Logo w Text.png"
+        [routerLink]="['/context']"
+      />
+    </div>
+    <div>
+      <img class="mr-4" src="../../assets/img/EN V Co-funded by_PANTONE.png" />
+      <app-language-selector></app-language-selector>
+    </div>
+  </div>
+</div>
+
+<nav class="center nav navbar navbar-expand-lg navbar-light bg-light">
+  <div class="center collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="center navbar-nav mr-auto">
+      <li class="nav-item active">
+        <!-- <a class="nav-link" routerLink="/about"
+          >//{{ words[0].about | translate }}
+        </a> -->
+        <a class="nav-link" routerLink="/about" [innerHTML]="data[0].title" > </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/staff"  [innerHTML]="data[1].title">
+         </a
+        >
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/news" [innerHTML]="data[2].title"></a>
+      </li>
+      <li class="nav-item">
+        <a
+          class="nav-link"
+          href="#"
+          [routerLink]="['/researchEu']"  
+          [innerHTML]="data[3].title"
+        >
+        </a>
+      </li>
+      <li class="nav-item">
+        <div class="dropdown">
+          <a
+            class="nav-link"
+            href="#"
+            role="button"
+            id="dropdownMenuLink"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+            [innerHTML]="data[6].title"
+          > 
+          </a>
+
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li>
+              <a class="dropdown-item centerr" [routerLink]="['/course']" href="#"  [innerHTML]="data[5].title" >
+                
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" [routerLink]="['/video']" href="#" [innerHTML]="data[6].title">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/discuss-eu" [innerHTML]="data[9].title">
+        
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/blog" href="#"  [innerHTML]="data[11].title"></a>
+         
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/contact" [innerHTML]="data[12].title">
+          </a
+        >
+      </li>
+    </ul>
+  </div>
+</nav>

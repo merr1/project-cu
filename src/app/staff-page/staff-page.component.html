@@ -1,0 +1,10 @@
+<div>
+  <div class="person" *ngFor="let item of stuff">
+    <img src="{{item.photo}}"/>
+    <div>
+      <h1 [innerHTML]="item.person" ></h1>
+      <p class="text" [innerHTML]="item.description">
+      </p>
+    </div>
+  </div>
+</div>

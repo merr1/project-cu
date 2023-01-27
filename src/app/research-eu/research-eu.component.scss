@@ -1,0 +1,56 @@
+.book{
+    display: flex;
+    width:40vw;
+    margin:4vh;
+    
+}
+.books{
+    width:100vw;
+    display: flex;
+    flex-wrap: wrap;
+}
+.right{
+    margin:20px;
+}
+img{
+    height:300px;
+    width:200px;
+}
+.header{
+    font-size: 20px;
+    font-weight: 800;
+    color:#316BA2;
+}
+p{
+    color:#316BA2;
+
+}
+.author{
+    font-size: 14px;
+    color:#316BA2;
+}
+a:hover {
+    text-decoration: none;
+    cursor: pointer;
+}
+h1{
+    color:#316BA2;
+}
+.meri{
+    font-weight: 500;
+}
+nav{
+    margin-left: 20px;
+    margin-top:40px;
+    .nav-link{
+        color: #316BA2;
+        font-weight: bold;
+        text-transform: uppercase;
+    
+    }
+   
+  
+}
+.checked{
+    border-left: 6px solid rgb(10, 84, 168);
+  }

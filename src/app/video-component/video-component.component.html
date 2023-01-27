@@ -1,0 +1,18 @@
+
+<div class="videos">
+  <div *ngFor="let item of data">
+    <iframe
+    width="300"
+    height="200"
+    [src]="item.url"
+    title="YouTube video player"
+    frameborder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen
+  ></iframe>
+  <div class="video-details">
+    <a  class="video-title"  [innerHTML]="item.title.slice(0,55) + '...'"></a>
+    <a  class="video-channel-name" [innerHTML]="item.description.slice(0,55) + '...'"></a>
+  </div>
+  </div>
+ 

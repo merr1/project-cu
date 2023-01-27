@@ -1,0 +1,21 @@
+<div>
+</div>
+<div class="books">
+  <div class="book" *ngFor="let item of data">
+    <div>
+      <img src="{{ item.photo }}" />
+    </div>
+    <div class="right">
+      <a
+        href="https://www.iss.europa.eu/sites/default/files/EUISSFiles/YES_2021.pdf"
+        target="_blank"
+        class="download_btn"
+      >
+        <h1 class="header" [innerHTML]="item.title.slice(0,55) + '...'" ></h1>
+        
+      </a>
+      <h2 class="author" [innerHTML]="item.author"></h2>
+      <p [innerHTML]="item.paragraph"></p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,51 @@
+<div class="books">
+  <nav class="nav flex-column">
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [ngClass]="param == 'first' ? 'checked' : ''"
+        (click)="param = 'first'"
+        >POLICY ROUNDTABLES
+      </a>
+    </li>
+    <li class="nav-item">
+      <a
+        class="nav-link"
+        [ngClass]="param == 'second' ? 'checked' : ''"
+        (click)="param = 'second'"
+      >
+        EXPERT INTERVIEWS</a
+      >
+    </li>
+  </nav>
+  <div *ngIf="param == 'first'">
+    <div class="book" *ngFor="let item of data">
+      <a href="{{ item.pdf }}" target="_blank" class="download_btn">
+        <div>
+          <img src="{{ item.photo }}" />
+        </div>
+        <div class="right">
+          <h1 class="header" [innerHTML]="item.title"></h1>
+
+          <h2 class="author" [innerHTML]="item.author"></h2>
+          <p [innerHTML]="item.paragraph"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div *ngIf="param !== 'first'">
+    <div class="book" *ngFor="let item of data1">
+      <a href="{{ item.pdf }}" target="_blank" class="download_btn">
+        <div>
+          <img src="{{ item.photo }}" />
+        </div>
+        <div class="right">
+          <h1 class="header" [innerHTML]="item.title"></h1>
+
+          <h2 class="author" [innerHTML]="item.author"></h2>
+          <p [innerHTML]="item.paragraph"></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,25 @@
+body{
+    margin-left:1rem;
+}
+.person{
+    display: flex;
+    margin-left:2rem;
+}
+h1,h2{
+    margin-top: 29px;
+    margin-left:1rem;
+    margin-bottom: 14.5px;
+    color:#316BA2;
+    font-weight: bolder;
+}
+.text{
+    color:#316BA2;
+    font-size: 16px;
+    margin: 30px 20px;
+}
+img{
+    height:400px !important;
+    width: 300px !important;
+    border-radius:5px; 
+    margin-top:20px;
+}

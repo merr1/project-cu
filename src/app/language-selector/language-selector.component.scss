@@ -1,0 +1,15 @@
+.costum-select{
+    border:none;
+    cursor: pointer;
+    padding:8px 12px;
+    border-radius: 3px;
+    color:#316BA2;
+    background-color: #eeee;
+}
+*:focus{
+    outline: none;
+}
+option{
+    cursor: pointer;
+    border:none;
+}
