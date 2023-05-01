@@ -32,7 +32,6 @@ export class VideoComponentComponent implements OnInit {
         this.data = data;
         for(let i=0;i<data.length;i++){
           this.data[i].url=this.sanitizer.bypassSecurityTrustResourceUrl('https://www.youtube.com/embed/'+data[i].url.slice(data[i].url.lastIndexOf('=')+1,data[i].url.lastIndexOf('=')+12));
-          console.log(this.data);
         }
   
 

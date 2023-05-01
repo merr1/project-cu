@@ -5,20 +5,21 @@
     style="width: 100vw"
   />
   <div class="cont">
-    <p class="m">Caucasus University</p>
+    <p class="m" [innerHTML]="data[3].text"></p>
     <p>
-      Paata Saakadze street 1 Tbilisi, 0102, Georgia | Phone: (+995 32) 2 37 77 77 | Email: info@cu.edu.ge
+     <span [innerHTML]="data[4].text"></span> <span [innerHTML]="data[5].text"></span>
     </p>
-    <p>Connect with us:</p>
+    <p [innerHTML]="data[1].text"></p>
     <div class="wrap">
-      <a href="https://www.facebook.com/CaucasusUniversity" target="_blank" class="hover-fx"><i class="fa-brands fa-facebook"></i></a>
-      <a href="https://www.linkedin.com/edu/school?id=192079&trk=edu-ca-frm-cncl" target="_blank" class="hover-fx"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="{{data[6].url}}" target="_blank" class="hover-fx"><i data-block-key="p8gbs" class="fa-brands fa-facebook"></i></a>
+      <a href="{{data[7].url}}" target="_blank" class="hover-fx"><i data-block-key="p8gbs" class="fa-brands fa-linkedin"></i></a>
 
-      <a href="https://twitter.com/CaucasusUni" target="_blank" class="hover-fx"><i class="fa-brands fa-twitter"></i></a>
-      <a href="https://www.instagram.com/caucasusuniversity/" target="_blank" class="hover-fx"><i class="fa-brands fa-instagram"></i></a>
+      <a href="{{data[8].url}}" target="_blank" class="hover-fx"><i data-block-key="p8gbs"  class="fa-brands fa-twitter"></i></a>
+      <a href="{{data[9].url}}" target="_blank" class="hover-fx"><i data-block-key="p8gbs"  class="fa-brands fa-instagram"></i></a>
     </div>
-    <p>
-      © 2022 კავკასიის უნივერსიტეტი. ყველა უფლება დაცულია.
+    <p class="flex"> 
+      <span class="pr-1"> © {{ currentYear }}  </span>
+     <span [innerHTML]="data[0].text"> </span>
     </p>
   </div>
 </div>

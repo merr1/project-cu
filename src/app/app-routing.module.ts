@@ -1,3 +1,4 @@
+import { TeachEuComponent } from './teach-eu/teach-eu.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutPageComponent } from './about-page/about-page.component';
@@ -16,6 +17,8 @@ import { ResearchEuComponent } from './research-eu/research-eu.component';
 import { StaffPageComponent } from './staff-page/staff-page.component';
 import { UpcomingConsultationsComponent } from './upcoming-consultations/upcoming-consultations.component';
 import { VideoComponentComponent } from './video-component/video-component.component';
+import { EventsComponent } from './context/events/events.component';
+import { TestComponent } from './test/test.component';
 
 const routes: Routes = [
   {
@@ -72,12 +75,12 @@ const routes: Routes = [
     component: ContextComponent,
   },
   {
-    path: 'video',
-    component: VideoComponentComponent,
+    path: 'teach-eu',
+    component: TeachEuComponent
   },
   {
-    path: 'admin',
-    component: AdminComponent,
+    path: 'video',
+    component: VideoComponentComponent,
   },
   {
     path:'course',
@@ -87,6 +90,10 @@ const routes: Routes = [
     path:'events',
     component: UpcomingConsultationsComponent,
 
+  },
+  {
+    path:"test",
+    component: TestComponent 
   }
 ];
 

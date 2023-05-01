@@ -12,6 +12,13 @@ export class ContextComponent implements OnInit {
   public len :any;
   public dataa:any;
   public dataaa:any;
+  public data2:any;
+  public len2:any;
+  public facebook:any;
+  public twitter:any;
+  public link1:any;
+  public link2:any;
+  
 
   constructor(    private http: HttpClient) {}
 
@@ -19,14 +26,34 @@ export class ContextComponent implements OnInit {
     (<any>window).twttr.widgets.load();
 }
   ngOnInit(): void {
+
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/news', { headers: headers })
+      .get<any>('https://45.93.139.10:8000/news', { headers: headers })
       .subscribe((data) => {
         this.data = data;
         this.len=data.length;
-        console.log(this.data)
+
+      });
+      this.http
+      .get<any>('http://45.93.139.10:8000/plain-text', { headers: headers })
+      .subscribe((data) => {
+        this.data2 = data;
+        data.map((item:any)=>{
+          if(item.tag=="main-facebook-feed-link"){
+            this.facebook=item.text;
+
+          }
+          if(item.tag=="main-twitter-feed-link"){
+          this.twitter=item.text;
+  
+          this.link1="https://twitter.com/"+this.twitter;
+
+          }
+        })
+
+        
 
       });
 
@@ -42,12 +69,11 @@ export class ContextComponent implements OnInit {
       this.http
       .get<any>('http://45.93.139.10:8000/events', { headers: headers })
       .subscribe((data) => {
-        if(data.length>3){
-        this.dataaa = data.splice(data.length-3,data.length);
-        }else{
           this.dataaa=data;
-        }
+          this.len2=data.length;
+   
       });
+      
   }
 
 

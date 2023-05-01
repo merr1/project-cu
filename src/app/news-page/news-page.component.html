@@ -13,7 +13,7 @@
     <div class="txt">
       <p [innerHTML]="item.article.slice(0,290) + '...'">
       </p>
-      <button type="button" routerLink="/full-news" [queryParams]="{article:item.id}" class="btn btn-outline-primary">
+      <button type="button" routerLink="/full-news" [queryParams]="{article:item.id}" class="read-more">
        {{item.button}}
       </button>
     </div>

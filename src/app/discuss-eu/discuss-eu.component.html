@@ -6,8 +6,8 @@
         [ngClass]="param == 'first' ? 'checked' : ''"
         (click)="param = 'first'"
 
-
-        >POLICY ROUNDTABLES
+        [innerHTML]="data2[20]?.text"
+        >
         </a
       >
     </li>
@@ -16,14 +16,15 @@
         class="nav-link"
         [ngClass]="param == 'second' ? 'checked' : ''"
         (click)="param = 'second'"
+        [innerHTML]="data2[21]?.text"
       >
-      EXPERT INTERVIEWS</a
+      </a
       >
     </li>
   </nav>
   <div class="first" *ngIf="param == 'first'">
-    <h2 [innerHTML]="aboutt.title"></h2>
-    <p  [innerHTML]="aboutt.paragraph">
+    <h2 [innerHTML]="aboutt?.title"></h2>
+    <p  [innerHTML]="aboutt?.paragraph">
     </p>
   </div>
   <div *ngIf="param == 'second'">
@@ -32,15 +33,15 @@
         <iframe
         width="300"
         height="200"
-        [src]="item.url"
+        [src]="item?.url"
         title="YouTube video player"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen
       ></iframe>
       <div class="video-details">
-        <a  class="video-title"  [innerHTML]="item.title.slice(0,55) + '...'"></a>
-        <a  class="video-channel-name" [innerHTML]="item.description.slice(0,55) + '...'"></a>
+        <a  class="video-title"  [innerHTML]="item?.title?.slice(0,55) + '...'"></a>
+        <a  class="video-channel-name" [innerHTML]="item?.description?.slice(0,55) + '...'"></a>
       </div>
       </div>
   </div>

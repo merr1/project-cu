@@ -23,7 +23,6 @@ export class NewsPageComponent implements OnInit {
       .get<any>('http://45.93.139.10:8000/news', { headers: headers })
       .subscribe((data) => {
         this.data = data;
-        console.log(this.data)
 
       });
 

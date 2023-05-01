@@ -24,7 +24,6 @@ export class HorizontalMenuComponent implements OnInit {
       .subscribe((data) => {
         this.data = data;
 
-        console.log(this.data,"meri")
       });
 
   }

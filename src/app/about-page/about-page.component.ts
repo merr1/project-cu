@@ -22,7 +22,6 @@ export class AboutPageComponent implements OnInit {
       .get<any>('http://45.93.139.10:8000/about', { headers: headers })
       .subscribe((data) => {
         this.aboutt = data[0];
-        console.log(data)
       });
   }
 

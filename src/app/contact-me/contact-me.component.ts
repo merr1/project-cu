@@ -1,3 +1,4 @@
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -7,7 +8,21 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./contact-me.component.scss'],
 })
 export class ContactMeComponent implements OnInit {
-  constructor(private translateService: TranslateService) {}
+  public lang: any;
+  public data: any;
+  public len: any;
+  constructor(
+    private translateService: TranslateService,
+    private http: HttpClient
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.lang = localStorage.getItem('language') || 'en';
+    let headers = new HttpHeaders().set('Content-Language', this.lang);
+    this.http
+      .get<any>('http://45.93.139.10:8000/plain-text', { headers: headers })
+      .subscribe((data) => {
+        this.data = data;
+      });
+  }
 }

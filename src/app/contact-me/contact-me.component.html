@@ -13,14 +13,14 @@
   </div>
 
   <div class="container">
-    <h3 class="mb-4 mt-md-4">Contact us</h3>
+    <h3 class="mb-4 mt-md-4" [innerHTML]="data[14].text"></h3>
     <div class="dbox w-90 d-flex align-items-start">
       <div class="icon d-flex align-items-center justify-content-center">
         <span class="fa fa-map-marker"></span>
       </div>
       <div class="text pl-3">
 
-        <p><span></span>{{'contact-p1'|translate}}</p>
+        <p  [innerHTML]="data[15].text"><span></span></p>
       </div>
     </div>
     <div class="dbox w-90 d-flex align-items-center">
@@ -30,7 +30,7 @@
       <div class="text pl-3">
         <p>
           <span></span>
-          <a>(+995 32) 2 37 77 77</a>
+          <a [innerHTML]="data[16].text"></a>
         </p>
       </div>
     </div>
@@ -41,7 +41,7 @@
       <div class="text pl-3">
         <p>
           <span></span>
-          <a>ips@cu.edu.ge</a>
+          <a  [innerHTML]="data[17].text"></a>
         </p>
       </div>
     </div>

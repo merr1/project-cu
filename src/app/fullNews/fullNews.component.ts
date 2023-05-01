@@ -36,20 +36,18 @@ export class FullNewsComponent implements OnInit {
     this.http
       .get<any>('http://45.93.139.10:8000/news', { headers: headers })
       .subscribe((data) => {
-        console.log(data)
 
         for(let i=0;i<data.length;i++){
 
-          console.log(this.param)
-          console.log(data[i].id==this.param, i)
 
-          if(data[i].id==this.param){
+
+          if(i+1==this.param){
             this.mainInfo= data[i];
 
           }
 
         }
-        console.log(this.aboutt)
+
       });
 
   }

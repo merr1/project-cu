@@ -25,7 +25,6 @@ export class StaffPageComponent implements OnInit {
         this.stuff=data;
 
         this.aboutt = data[0];
-        console.log(this.aboutt)
       });
 
   }

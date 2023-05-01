@@ -21,10 +21,11 @@ export class BlogComponent implements OnInit {
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/blog', { headers: headers })
+      .get<any>('https://eupoltrans.name:8000/blog', { headers: headers })
       .subscribe((data) => {
         this.data = data;
-        console.log(this.data)
+        console.log("meri")
+        console.log(data)
 
       });
 

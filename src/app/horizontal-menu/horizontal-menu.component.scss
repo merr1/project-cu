@@ -10,6 +10,10 @@
 img{
     height:64px;
 }
+.logo1{
+    height:70px !important;
+
+}
 .image{
     height: 100%;
     display: flex;
@@ -32,7 +36,7 @@ li{
     align-items: center ;
     flex-direction: row;
     justify-content: center !important;
-    width: 100vw !important;
+    //width: 100vw !important;
 }
 .centerr{
     display: flex;
@@ -82,4 +86,13 @@ a:after {
   .image{
 
   }
+}
+#navbarSupportedContent{
+    margin-left:8vw !important;
+    margin-right:8vw !important;
+    display: flex;
+    width:100%;
+    justify-content:space-between !important;
+
+
 }

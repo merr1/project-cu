@@ -5,8 +5,9 @@
         class="nav-link"
         [ngClass]="param == 'first' ? 'checked' : ''"
         (click)="param = 'first'"
+        [innerHTML]="data2[12].text"
         
-        >{{data2[4].title}}
+        >
       </a>
     </li>
     <li class="nav-item">
@@ -14,27 +15,14 @@
         class="nav-link"
         [ngClass]="param == 'second' ? 'checked' : ''"
         (click)="param = 'second'"
+        [innerHTML]="data2[13].text"
       >
-      {{data2[5].title}}</a
+       </a
       >
     </li>
   </nav>
   <div *ngIf="param == 'first'" class="bookss">
     <div class="book" *ngFor="let item of data">
-      <a class="snip1360" href="{{ item.pdf }}" target="_blank">
-      
-      <img src="{{ item.photo }}" alt="sample88" />
-      <figcaption>
-        <h4  [innerHTML]="item.title"></h4>
-        <h4 [innerHTML]="item.author"></h4>
-        <p [innerHTML]="item.paragraph.slice(0,200) + '...'"> </p><a href="#" class="read-more">Read More</a>
-      </figcaption>
-
-      </a>
-    </div>
-  </div>
-  <div *ngIf="param !== 'first'" class="bookss">
-    <div class="book" *ngFor="let item of data1">
       <a class="snip1360" href="{{ item.pdf }}" target="_blank">
       
         <img src="{{ item.photo }}" alt="sample88" />
@@ -46,5 +34,24 @@
   
         </a>
     </div>
+  </div>
+  <div *ngIf="param !== 'first'">
+    <div class="videos">
+      <div *ngFor="let item of dataVideo">
+        <iframe
+        width="300"
+        height="200"
+        [src]="item.url"
+        title="YouTube video player"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+      <div class="video-details">
+        <a  class="video-title"  [innerHTML]="item.title.slice(0,55) + '...'"></a>
+        <a  class="video-channel-name" [innerHTML]="item.description.slice(0,100) + '...'"></a>
+      </div>
+      </div>
+     
   </div>
 </div>

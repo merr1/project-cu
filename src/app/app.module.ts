@@ -26,12 +26,19 @@ import { CourseComponent } from './course/course.component';
 import { UpcomingConsultationsComponent } from './upcoming-consultations/upcoming-consultations.component';
 import { FullBlogComponent } from './full-blog/full-blog.component';
 import { FullUpcomingComponent } from './full-upcoming/full-upcoming.component';
+import { TeachEuComponent } from './teach-eu/teach-eu.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { EventsComponent } from './context/events/events.component';
+import { SliderComponent } from './context/slider/slider.component';
+import { TestComponent } from './test/test.component';
+
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 @NgModule({
-  declarations: [								
+  declarations: [										
     AppComponent,
     LanguageSelectorComponent,
     AboutPageComponent,
@@ -51,7 +58,11 @@ export function HttpLoaderFactory(http: HttpClient) {
       CourseComponent,
       UpcomingConsultationsComponent,
       FullBlogComponent,
-      FullUpcomingComponent
+      FullUpcomingComponent,
+      TeachEuComponent,
+      EventsComponent,
+      SliderComponent,
+      TestComponent
    ],
   imports: [
     BrowserModule,
@@ -59,6 +70,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     BrowserModule,
     NgbModule,
     HttpClientModule,
+    BrowserAnimationsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

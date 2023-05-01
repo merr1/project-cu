@@ -24,7 +24,6 @@ export class UpcomingConsultationsComponent implements OnInit {
       .get<any>('http://45.93.139.10:8000/events/', { headers: headers })
       .subscribe((data) => {
         this.data = data;
-        console.log(this.data)
 
       });
       this.http

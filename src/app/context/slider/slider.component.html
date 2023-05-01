@@ -1,0 +1,128 @@
+<div
+  id="carouselExampleIndicators"
+  class="carousel slide"
+  data-bs-ride="carousel"
+>
+  <div class="carousel-indicators">
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="0"
+      class="active"
+      aria-current="true"
+      aria-label="Slide 1"
+    ></button>
+    <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="1"
+      aria-label="Slide 2"
+    ></button>
+    <!-- <button
+      type="button"
+      data-bs-target="#carouselExampleIndicators"
+      data-bs-slide-to="2"
+      aria-label="Slide 3"
+    ></button> -->
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <div class="row vertical" >
+        <div class="cards"  routerLink="/full-news"
+        [queryParams]="{ article: len  }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-1]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-1]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards"  routerLink="/full-news"
+        [queryParams]="{ article: len-1 }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-2]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-2]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards" routerLink="/full-news"
+        [queryParams]="{ article: len-2 }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-3]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-3]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-item" *ngIf="data.length>=4">
+      <div class="row vertical">
+        <div class="cards"  routerLink="/full-news"
+        [queryParams]="{ article: len-3 }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-4]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-4]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards" routerLink="/full-news"
+        [queryParams]="{ article: len-4 }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-5]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-5]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="cards" routerLink="/full-news"
+        [queryParams]="{ article: len-4 }">
+          <div class="card-item">
+            <div class="card-image">
+              <img src="{{ data[len-6]?.photo }}" />
+            </div>
+            <div class="card-info">
+              <h2 class="card-title" [innerHTML]="data[len-6]?.title.slice(0, 100) + '...'"></h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button
+    class="carousel-control-prev"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="prev"
+  >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button
+    class="carousel-control-next"
+    type="button"
+    data-bs-target="#carouselExampleIndicators"
+    data-bs-slide="next"
+  >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+

@@ -13,7 +13,9 @@
 }
 .text{
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
+  margin-left: 10px;
 }
 .first{
   @media screen and (max-width: 768px){
@@ -31,8 +33,9 @@ button{
     
 }
 .dont1{
-  padding: 10px;
-  border-radius: 4px;
+  padding: 1px;
+  border-radius: 5px;
+  margin-left: 3vw;
   box-shadow: unquote(
     '0px 1px 18px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 3px 5px rgba(0, 0, 0, 0.2)'
 );
@@ -42,15 +45,36 @@ button{
 }
 .carousel-control-prev,.carousel-control-next{
   background-color: #316BA2;
+  margin-left:0px !important;
+  height:40px !important;
+  margin-top:200px;
+  width:40px !important;
+
+
+}
+.carr{
+  margin-left: -3vw;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: unquote(
+    '0px 1px 20px rgba(0, 0, 0, 0.12), 0px 6px 10px rgba(0, 0, 0, 0.14), 0px 3px 5px rgba(0, 0, 0, 0.2)'
+);
+}
+.carousel-item{
+  margin-left:100px;
+
+}
+.carousel-control-prev{
+ // margin-left:-3.5vw !important;
 }
 .size1{
-  width: 400px !important;
-  height: 400px !important;
+  max-width: 100%;
+  max-height:100%;
 }
 .size{
   margin: 10px;
-  width: 400px;
-  height: 300px;
+  width: 23vw;
+  height: 27vh;
   cursor: pointer;
    
   @media screen and (max-width: 768px){
@@ -112,21 +136,32 @@ button{
   }
   .second{
       display: flex;
-      justify-content: space-around;
+      margin-left:8vw;
       flex-wrap: wrap;
       margin-bottom: 30px;
       margin-top: 30px;
+      width:80vw;
+      justify-content: space-between;
+  }
+  .headeer{
+    margin-left:8vw;
+    color:#316BA2;
+    text-transform: uppercase;
+    cursor: pointer;
   }
 .first{
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin-top:30px;
+    margin-left:9vw;
+    margin-right: 9vw;
 }
 .frame{
     display: flex;
+    justify-content: space-between;
+    width:80vw;
+    margin-left:8vw;
 
-    justify-content: space-around;
-    margin: 20px;
 }
 body {
     margin: 0px;
@@ -198,4 +233,20 @@ body {
 .news:hover{
     color:#b7a57a;
     cursor: pointer;
+}
+.carousel-inner{
+  margin-left:-50px;
+}
+.blog{
+  display: flex;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+
+  padding: 15px;
+  border-radius: 4px;
+  margin-top:15px;
+  img{
+    height:100px;
+
+  }
 }

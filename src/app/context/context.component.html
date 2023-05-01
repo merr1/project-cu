@@ -1,132 +1,72 @@
+<br />
+<br />
+<h1 routerLink="/news" class="headeer" [innerHTML]="data2[19]?.text"></h1>
 <div class="first">
-  <div class="carr">
-    <div
-      id="carouselExampleIndicators"
-      class="carousel slide w-70"
-      data-bs-ride="carousel"
-    >
-      <div class="carousel-indicators w-70">
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="0"
-          class="active"
-          aria-current="true"
-          aria-label="Slide 1"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="1"
-          aria-label="Slide 2"
-        ></button>
-        <button
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide-to="2"
-          aria-label="Slide 3"
-        ></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active dont1" routerLink="/full-news" [queryParams]="{ article: len-2}">
-          <img
-          class="size1"
-          src="{{ data[len-3].photo }}"
-          alt="..."
-        />
-        <p
-          class="apsolute"
-          [innerHTML]="data[len-3].title.slice(0, 55) + '...'"
-        ></p>
-        </div>
-        <div class="carousel-item dont1"  routerLink="/full-news" [queryParams]="{ article: len-1 }">
-          <img
-            class="size1"
-            src="{{ data[len-2].photo }}"
-            alt="..."
-          />
-          <p
-            class="apsolute"
-            [innerHTML]="data[len-2].title.slice(0, 55) + '...'"
-          ></p>
-        </div>
-        <div class="carousel-item dont1"  routerLink="/full-news" [queryParams]="{ article: len }">
-          <img
-            class="size1"
-            src="{{ data[len-1].photo }}"
-            alt="..."
-          />
-          <p
-            class="apsolute"
-            [innerHTML]="data[len-1].title.slice(0, 55) + '...'"
-          ></p>
-        </div>
-      </div>
-      <div class="prevv">
-        <button
-          class="carousel-control-prev"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-      </div>
-      <div class="prevv">
-        <button
-          class="carousel-control-next"
-          type="button"
-          data-bs-target="#carouselExampleIndicators"
-          data-bs-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+<app-slider></app-slider>
 
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="">
-    <h4 routerLink="/events" class="blog-title">upcoming event</h4>
-    <hr />
-    <div class="news">
-    <h6 class="text" *ngFor="let item of dataaa" routerLink="/full-event" [queryParams]="{article:item.id}"  [innerHTML]="item.title"></h6>
-    </div>
-  </div>
 </div>
 <br />
 <br />
-
+<h1 routerLink="/events" class="headeer" [innerHTML]="data2[18]?.text"></h1>
 <div class="second">
-  <div class="dont1" routerLink="/full-news" [queryParams]="{ article: len }">
-    <img class="size" src="{{ data[len-1].photo }}" />
-    <p class="apsolute" [innerHTML]="data[len-1].title.slice(0, 55) + '...'"></p>
-  </div>
+  <app-events
+    [event]="data2[18]?.text"
+    routerLink="/full-event"
+    [queryParams]="{ article: len2 }"
+    [image]="dataaa[len2 - 1]?.photo"
+    [header]="dataaa[len2 - 1]?.title.slice(0, 100) + '...'"
+    [description]="dataaa[len2 - 1]?.article.slice(0, 250) + '...'"
+  ></app-events>
+  <app-events
+  [event]="data2[18]?.text"
+  routerLink="/full-event"
+  [queryParams]="{ article: len2-1 }"
+  [image]="dataaa[len2 - 2]?.photo"
+  [header]="dataaa[len2 - 2]?.title.slice(0, 100) + '...'"
+  [description]="dataaa[len2 - 2]?.article.slice(0, 250) + '...'"
+></app-events>
+<app-events
+[event]="data2[18]?.text"
+routerLink="/full-event"
+[queryParams]="{ article: len2 -2 }"
+[image]="dataaa[len2 - 3]?.photo"
+[header]="dataaa[len2 - 3]?.title.slice(0, 100) + '...'"
+[description]="dataaa[len2 - 3]?.article.slice(0, 220) + '...'"
+></app-events>
 
-  <div class="dont1" routerLink="/full-news" [queryParams]="{ article: len-1 }">
-    <img class="size" src="{{ data[len-2].photo }}" />
-    <p class="apsolute" [innerHTML]="data[len-2].title.slice(0, 55) + '...'"></p>
-  </div>
-
-  <div class="dont1" routerLink="/full-news" [queryParams]="{ article: len-2 }">
-    <img class="size" src="{{ data[len-3].photo }}" />
-    <p class="apsolute" [innerHTML]="data[len-3].title.slice(0, 55) + '...'"></p>
-  </div>
+  
 </div>
 
 <div class="frame">
   <div>
-    <h1 class="blog-title" routerLink="/blog">On our Blog</h1>
-    <br />
-    <hr />
+    <h1
+      class="blog-title"
+      routerLink="/blog"
+      [innerHTML]="this.data2[11].text"
+    ></h1>
     <div class="news">
+      <div *ngFor="let item of dataa">
+        <div class="blog"  
+        routerLink="/full-blog"
+        [queryParams]="{ article: item.id }"
+        >
+          <img src="{{item.photo}}"/>
+          <h6
+          class="text"
+          [innerHTML]="item.title"
+        ></h6>
 
-      <h6 class="text" *ngFor="let item of dataa" routerLink="/full-blog" [queryParams]="{article:item.id}"  [innerHTML]="item.title"></h6>
+        </div>
+
+
+      </div>
+
+     
     </div>
   </div>
   <div>
     <iframe
-      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FCaucasusUniversity&tabs=timeline&width=400&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
+      src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F100083649975315&tabs=timeline&width=400&height=600&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId"
       width="400"
       height="600"
       style="border: none; overflow: hidden"
@@ -142,9 +82,9 @@
       class="twitter-timeline"
       data-width="400"
       data-height="600"
-      href="https://twitter.com/CaucasusUni"
+      href="{{link1}}"
     >
-      Tweets by TwitterDev
+      
     </a>
   </div>
 </div>
