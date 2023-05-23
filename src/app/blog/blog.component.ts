@@ -10,8 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class BlogComponent implements OnInit {
   public aboutt: any;
   public lang: any;
-  public data:any;
-  public data1:any;
+  public data: any;
+  public data1: any;
   constructor(
     private translateService: TranslateService,
     private http: HttpClient
@@ -21,20 +21,21 @@ export class BlogComponent implements OnInit {
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('https://eupoltrans.name:8000/blog', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/blog', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.data = data;
-        console.log("meri")
-        console.log(data)
-
+        console.log('meri');
+        console.log(data);
       });
 
-      this.http
-      .get<any>('http://45.93.139.10:8000/news', { headers: headers })
+    this.http
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/news/', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.data1 = data;
-
       });
-
   }
 }

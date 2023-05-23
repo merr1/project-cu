@@ -20,7 +20,9 @@ export class ContactMeComponent implements OnInit {
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/plain-text', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/plain-text/', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.data = data;
       });

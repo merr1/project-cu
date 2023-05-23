@@ -5,14 +5,13 @@ import { TranslateService } from '@ngx-translate/core';
 @Component({
   selector: 'app-footer',
   templateUrl: './footer.component.html',
-  styleUrls: ['./footer.component.scss']
+  styleUrls: ['./footer.component.scss'],
 })
 export class FooterComponent implements OnInit {
-
   public lang: any;
   public data: any;
   public len: any;
-  public currentYear:number= new Date().getFullYear();
+  public currentYear: number = new Date().getFullYear();
   constructor(
     private translateService: TranslateService,
     private http: HttpClient
@@ -22,7 +21,9 @@ export class FooterComponent implements OnInit {
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/plain-text', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/plain-text/', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.data = data;
       });

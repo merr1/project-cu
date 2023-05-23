@@ -10,7 +10,7 @@ import { TranslateService } from '@ngx-translate/core';
 export class HorizontalMenuComponent implements OnInit {
   public aboutt: any;
   public lang: any;
-  public data:any;
+  public data: any;
   constructor(
     private translateService: TranslateService,
     private http: HttpClient
@@ -20,12 +20,12 @@ export class HorizontalMenuComponent implements OnInit {
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/menu', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/menu/', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.data = data;
-
       });
-
   }
 }
 //   <!-- ივენთები 6 ივენთი (ბათუმი, ქუთაისი თელავი სამი თბილისი) -->

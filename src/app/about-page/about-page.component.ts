@@ -13,16 +13,17 @@ export class AboutPageComponent implements OnInit {
   constructor(
     private translateService: TranslateService,
     private http: HttpClient
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.lang = localStorage.getItem('language');
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/about', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/about/', {
+        headers: headers,
+      })
       .subscribe((data) => {
         this.aboutt = data[0];
       });
   }
-
 }

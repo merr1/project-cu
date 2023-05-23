@@ -7,49 +7,38 @@ import { combineLatest } from 'rxjs';
 @Component({
   selector: 'app-fullNews',
   templateUrl: './fullNews.component.html',
-  styleUrls: ['./fullNews.component.scss']
+  styleUrls: ['./fullNews.component.scss'],
 })
 export class FullNewsComponent implements OnInit {
   public aboutt: any;
   public lang: any;
-  public data:any;
-  public mainInfo:any;
+  public data: any;
+  public mainInfo: any;
 
-  param:any;
+  param: any;
   constructor(
     private translateService: TranslateService,
     private http: HttpClient,
     private route: ActivatedRoute
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
-    this.route.queryParams
-    .subscribe(params => {
+    this.route.queryParams.subscribe((params) => {
       this.param = params.article;
-    }
-  );
-    
+    });
+
     this.lang = localStorage.getItem('language') || 'en';
     let headers = new HttpHeaders().set('Content-Language', this.lang);
     this.http
-      .get<any>('http://45.93.139.10:8000/news', { headers: headers })
+      .get<any>('https://www.eupoltrans.cu.edu.ge:8000/news/', {
+        headers: headers,
+      })
       .subscribe((data) => {
-
-        for(let i=0;i<data.length;i++){
-
-
-
-          if(i+1==this.param){
-            this.mainInfo= data[i];
-
+        for (let i = 0; i < data.length; i++) {
+          if (i + 1 == this.param) {
+            this.mainInfo = data[i];
           }
-
         }
-
       });
-
   }
-
 }
